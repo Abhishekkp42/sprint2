@@ -7,7 +7,9 @@ export const AddHouse = () => {
 
   return (
     <div className="addHouseContainer">
-      <form>
+      <form onSubmit={() => {
+        
+      }}>
         <label>name</label>
         <input type="text" className="name" value={""} required onChange={(e) => {
           setText(e.target.value)
@@ -36,12 +38,12 @@ export const AddHouse = () => {
         <label>preferredTenant</label>
         <br />
         <label>bachelor</label>
-        <input checked={""} type="checkbox" className="bachelor" onChecked={(e) => {
+        <input checked={""} type="checkbox" className="bachelor" onChange={(e) => {
           setText(e.target.value)
         }}/>
         <br />
         <label>married</label>
-        <input checked={""} type="checkbox" className="married" onChecked={(e) => {
+        <input checked={""} type="checkbox" className="married" onChange={(e) => {
           setText(e.target.value)
         }}/>
         <br />
