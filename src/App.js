@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import { Rentals } from "./Components/Rentals/Rentals";
+import { AddHouse } from "./Components/AddHouse/AddHouse";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button className="toggleForm">
+        {/* Show text Add House or Show Rentals based on state */}
+      </button>
+      {/* Show component based on state */}
+      <br />
     </div>
   );
 }
