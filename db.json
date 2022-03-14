@@ -1,3 +1,15 @@
 {
-  "houses": []
+  "houses": [
+    {
+      "name": false,
+      "ownerName": false,
+      "address": false,
+      "areaCode": false,
+      "rent": false,
+      "bachelor": true,
+      "married": false,
+      "image": false,
+      "id": 1
+    }
+  ]
 }
