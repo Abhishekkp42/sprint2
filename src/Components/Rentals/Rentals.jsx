@@ -1,11 +1,35 @@
 import "./Rentals.css";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export const Rentals = () => {
+  const [house, setHouses] = useState([]);
+
+  useEffect(() => {
+    setJust();
+  }, []);
+
+  const setJust = () => {
+    axios.get("http://localhost:8080/houses").then((res) => {
+      setHouses(res.data);
+    });
+    console.log(house);
+  };
+
+  const sortByRentLow = () => {
+    const arr = house.sort((a, b) => {
+      return a.rent - b.rent;
+    });
+    setHouses(arr);
+  };
+
   return (
     <div className="rentalContainer">
       <div className="sortingButtons">
         <button className="sortById">Sort by ID</button>
-        <button className="sortByRentAsc">Rent Low to high</button>
+        <button className="sortByRentAsc" onClick={() => {
+            sortByRentLow();
+          }}>Rent Low to high</button>
         <button className="sortByRentDesc">Rent High to low</button>
         <button className="sortByAreaAsc">Area Low to high</button>
         <button className="sortByAreaDesc">Area High to Low</button>
@@ -29,7 +53,7 @@ export const Rentals = () => {
           </tr>
         </thead>
         <tbody>
-          {[].map((house, index) => {
+          {house.map((house, index) => {
             return (
               <tr key={house.id} className="houseDetails">
                 <td className="houseId">{house.id}</td>
@@ -40,6 +64,13 @@ export const Rentals = () => {
                 <td className="rent">{house.rent}</td>
                 <td className="preferredTenants">
                   {/* Show text Both or Bachelors or Married based on values */}
+                  {house.bachelor && house.married
+                    ? "Both"
+                    : house.bachelor
+                    ? "Bachelors"
+                    : house.married
+                    ? "Married"
+                    : "Both"}
                 </td>
                 <td className="houseImage">
                   <img src={house.image} alt="house" />
