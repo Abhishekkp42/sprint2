@@ -22,15 +22,23 @@ export const Rentals = () => {
     });
     setHouses(arr);
   };
+  const sortByRentHigh = () => {
+    const arr = house.sort((a, b) => {
+      return b.rent - a.rent;
+    });
+    setHouses(arr);
+  };
 
   return (
     <div className="rentalContainer">
       <div className="sortingButtons">
         <button className="sortById">Sort by ID</button>
         <button className="sortByRentAsc" onClick={() => {
-            sortByRentLow();
+            sortByRentHigh();
           }}>Rent Low to high</button>
-        <button className="sortByRentDesc">Rent High to low</button>
+        <button className="sortByRentDesc" onClick={() => {
+            sortByRentLow();
+          }}>Rent High to low</button>
         <button className="sortByAreaAsc">Area Low to high</button>
         <button className="sortByAreaDesc">Area High to Low</button>
       </div>
