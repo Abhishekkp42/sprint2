@@ -10,6 +10,27 @@
       "married": false,
       "image": false,
       "id": 1
+    },
+    {
+      "name": "wsyqwts",
+      "ownerName": "",
+      "address": "dwd",
+      "areaCode": "2121",
+      "rent": "3211",
+      "preferredTenant": "married",
+      "img": "2313ed",
+      "ownername": "fewd",
+      "id": 2
+    },
+    {
+      "name": "hbxhasxsa",
+      "ownername": "hkbdkjew",
+      "address": "8dewdewd",
+      "areaCode": "66732",
+      "rent": "89328932",
+      "preferredTenant": "married",
+      "img": "ecxeced",
+      "id": 3
     }
   ]
 }
